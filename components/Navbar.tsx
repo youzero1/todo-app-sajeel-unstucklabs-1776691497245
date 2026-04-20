@@ -39,6 +39,13 @@ export default function Navbar() {
           ))}
         </ul>
 
+        <a
+          href="#contact"
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/20"
+        >
+          Hire Me
+        </a>
+
         {/* Mobile Hamburger */}
         <button
           className="md:hidden text-gray-300 hover:text-white focus:outline-none"
@@ -64,6 +71,13 @@ export default function Navbar() {
               {link}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="mt-3 block text-center py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-full transition-colors"
+          >
+            Hire Me
+          </a>
         </div>
       )}
     </nav>

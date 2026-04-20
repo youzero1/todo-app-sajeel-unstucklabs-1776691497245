@@ -1,9 +1,16 @@
 export default function About() {
   const stats = [
-    { label: 'Years Experience', value: '5+' },
-    { label: 'Projects Completed', value: '40+' },
-    { label: 'Happy Clients', value: '30+' },
-    { label: 'Technologies', value: '20+' },
+    { label: 'Years Experience', value: '5+', icon: '🗓️' },
+    { label: 'Projects Completed', value: '40+', icon: '🚀' },
+    { label: 'Happy Clients', value: '30+', icon: '😊' },
+    { label: 'Technologies', value: '20+', icon: '⚡' },
+  ];
+
+  const timeline = [
+    { year: '2024', role: 'Senior Full-Stack Developer', company: 'TechCorp Inc.' },
+    { year: '2022', role: 'Full-Stack Developer', company: 'StartupXYZ' },
+    { year: '2020', role: 'Frontend Developer', company: 'DigitalAgency' },
+    { year: '2019', role: 'Junior Developer', company: 'WebStudio' },
   ];
 
   return (
@@ -28,6 +35,13 @@ export default function About() {
               <div className="absolute -top-4 -left-4 w-20 h-20 bg-gray-800 rounded-2xl border border-gray-700 flex items-center justify-center text-3xl shadow-xl">
                 💡
               </div>
+              <div className="absolute top-1/2 -right-8 -translate-y-1/2 bg-gray-800 border border-gray-700 rounded-2xl px-4 py-3 shadow-xl">
+                <div className="text-xs text-gray-400 mb-1">Open to Work</div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  <span className="text-white text-sm font-semibold">Available</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -46,9 +60,23 @@ export default function About() {
               and exploring new technologies. I believe in writing clean, maintainable code that
               stands the test of time.
             </p>
+
+            {/* Timeline */}
+            <div className="mb-8 space-y-3">
+              {timeline.map((item) => (
+                <div key={item.year} className="flex items-start gap-4">
+                  <span className="text-indigo-400 font-bold text-sm w-10 shrink-0 pt-0.5">{item.year}</span>
+                  <div className="flex-1 border-l border-gray-700 pl-4">
+                    <p className="text-white font-semibold text-sm">{item.role}</p>
+                    <p className="text-gray-500 text-xs">{item.company}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <a
               href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/20"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-full transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:-translate-y-0.5"
             >
               📄 Download Resume
             </a>
@@ -60,8 +88,9 @@ export default function About() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center hover:border-indigo-500/50 transition-colors"
+              className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-1 group"
             >
+              <div className="text-3xl mb-2">{stat.icon}</div>
               <div className="text-4xl font-extrabold text-indigo-400 mb-1">{stat.value}</div>
               <div className="text-gray-400 text-sm">{stat.label}</div>
             </div>

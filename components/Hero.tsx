@@ -7,12 +7,16 @@ export default function Hero() {
       {/* Background gradient blobs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="text-center max-w-4xl mx-auto relative z-10">
         {/* Avatar */}
         <div className="mb-8 flex justify-center animate-fadeIn">
-          <div className="w-28 h-28 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-5xl shadow-xl shadow-indigo-500/30">
-            👨‍💻
+          <div className="relative">
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-6xl shadow-2xl shadow-indigo-500/40 ring-4 ring-indigo-500/20">
+              👨‍💻
+            </div>
+            <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full border-4 border-gray-950" />
           </div>
         </div>
 
@@ -51,6 +55,7 @@ export default function Hero() {
             { label: 'GitHub', href: '#', icon: '🐙' },
             { label: 'LinkedIn', href: '#', icon: '💼' },
             { label: 'Twitter', href: '#', icon: '🐦' },
+            { label: 'Dev.to', href: '#', icon: '📝' },
           ].map((s) => (
             <a
               key={s.label}
@@ -58,7 +63,7 @@ export default function Hero() {
               className="flex items-center gap-2 text-gray-500 hover:text-indigo-400 transition-colors text-sm"
             >
               <span>{s.icon}</span>
-              <span>{s.label}</span>
+              <span className="hidden sm:inline">{s.label}</span>
             </a>
           ))}
         </div>

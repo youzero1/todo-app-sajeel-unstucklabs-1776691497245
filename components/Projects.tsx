@@ -88,8 +88,8 @@ export default function Projects() {
               }`}
             >
               {/* Card header */}
-              <div className={`h-32 bg-gradient-to-br ${project.color} flex items-center justify-center text-6xl relative`}>
-                {project.emoji}
+              <div className={`h-36 bg-gradient-to-br ${project.color} flex items-center justify-center text-6xl relative`}>
+                <span className="drop-shadow-lg">{project.emoji}</span>
                 {project.featured && (
                   <span className="absolute top-3 right-3 text-xs bg-white/20 backdrop-blur-sm text-white px-2 py-0.5 rounded-full font-medium">
                     ⭐ Featured
@@ -132,6 +132,15 @@ export default function Projects() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 px-8 py-3 border border-gray-700 hover:border-indigo-500 text-gray-300 hover:text-indigo-400 font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5"
+          >
+            View All Projects →
+          </a>
         </div>
       </div>
     </section>

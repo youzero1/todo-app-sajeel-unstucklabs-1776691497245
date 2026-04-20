@@ -3,6 +3,7 @@ export default function Skills() {
     {
       category: 'Frontend',
       icon: '🎨',
+      color: 'from-indigo-500 to-blue-500',
       skills: [
         { name: 'React / Next.js', level: 95 },
         { name: 'TypeScript', level: 90 },
@@ -13,6 +14,7 @@ export default function Skills() {
     {
       category: 'Backend',
       icon: '⚙️',
+      color: 'from-purple-500 to-pink-500',
       skills: [
         { name: 'Node.js', level: 88 },
         { name: 'Python / Django', level: 80 },
@@ -23,6 +25,7 @@ export default function Skills() {
     {
       category: 'DevOps & Tools',
       icon: '🛠️',
+      color: 'from-emerald-500 to-teal-500',
       skills: [
         { name: 'Docker', level: 80 },
         { name: 'AWS', level: 72 },
@@ -30,6 +33,21 @@ export default function Skills() {
         { name: 'CI/CD', level: 78 },
       ],
     },
+  ];
+
+  const techBadges = [
+    { name: 'React', icon: '⚛️' },
+    { name: 'Next.js', icon: '▲' },
+    { name: 'TypeScript', icon: '📘' },
+    { name: 'Node.js', icon: '🟢' },
+    { name: 'Python', icon: '🐍' },
+    { name: 'Docker', icon: '🐳' },
+    { name: 'PostgreSQL', icon: '🐘' },
+    { name: 'Redis', icon: '🔴' },
+    { name: 'AWS', icon: '☁️' },
+    { name: 'Figma', icon: '🎨' },
+    { name: 'GraphQL', icon: '◈' },
+    { name: 'Tailwind', icon: '🌊' },
   ];
 
   return (
@@ -48,7 +66,9 @@ export default function Skills() {
               className="bg-gray-900 border border-gray-800 rounded-3xl p-8 hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-3xl">{cat.icon}</span>
+                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-lg shadow-lg`}>
+                  {cat.icon}
+                </div>
                 <h3 className="text-xl font-bold text-white">{cat.category}</h3>
               </div>
               <div className="space-y-5">
@@ -60,7 +80,7 @@ export default function Skills() {
                     </div>
                     <div className="w-full bg-gray-800 rounded-full h-2">
                       <div
-                        className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full transition-all duration-700"
+                        className={`bg-gradient-to-r ${cat.color} h-2 rounded-full transition-all duration-700`}
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
@@ -73,16 +93,15 @@ export default function Skills() {
 
         {/* Tech badges */}
         <div className="mt-14 flex flex-wrap justify-center gap-3">
-          {['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'Docker', 'PostgreSQL', 'Redis', 'AWS', 'Figma', 'GraphQL', 'Tailwind'].map(
-            (tech) => (
-              <span
-                key={tech}
-                className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-full text-gray-300 text-sm hover:border-indigo-500 hover:text-indigo-400 transition-colors cursor-default"
-              >
-                {tech}
-              </span>
-            )
-          )}
+          {techBadges.map((tech) => (
+            <span
+              key={tech.name}
+              className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-full text-gray-300 text-sm hover:border-indigo-500 hover:text-indigo-400 transition-colors cursor-default flex items-center gap-2"
+            >
+              <span>{tech.icon}</span>
+              <span>{tech.name}</span>
+            </span>
+          ))}
         </div>
       </div>
     </section>
