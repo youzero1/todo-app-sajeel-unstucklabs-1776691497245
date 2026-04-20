@@ -30,20 +30,20 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
   };
 
   return (
-    <li className="group flex items-center gap-4 px-6 py-4 hover:bg-stone-800/50 transition-colors">
+    <li className="group flex items-center gap-4 px-6 py-4 hover:bg-red-800/50 transition-colors">
       {/* Checkbox */}
       <button
         onClick={() => onToggle(todo.id)}
         className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
           todo.completed
-            ? 'bg-amber-700 border-transparent'
-            : 'border-stone-500 hover:border-amber-600'
+            ? 'bg-red-600 border-transparent'
+            : 'border-red-500 hover:border-red-400'
         }`}
         aria-label={todo.completed ? 'Mark incomplete' : 'Mark complete'}
       >
         {todo.completed && (
           <svg
-            className="w-3 h-3 text-amber-100"
+            className="w-3 h-3 text-red-100"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -63,11 +63,11 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEditValue(e.target.value)}
             onKeyDown={handleEditKeyDown}
             autoFocus
-            className="flex-1 px-3 py-1.5 text-sm border border-stone-600 bg-stone-800 text-amber-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-700"
+            className="flex-1 px-3 py-1.5 text-sm border border-red-700 bg-red-800 text-red-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
           />
           <button
             type="submit"
-            className="px-3 py-1.5 text-xs bg-amber-700 text-amber-100 rounded-lg hover:bg-amber-600 transition-colors font-medium"
+            className="px-3 py-1.5 text-xs bg-red-600 text-red-100 rounded-lg hover:bg-red-500 transition-colors font-medium"
           >
             Save
           </button>
@@ -77,7 +77,7 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
               setEditValue(todo.text);
               setIsEditing(false);
             }}
-            className="px-3 py-1.5 text-xs bg-stone-700 text-stone-300 rounded-lg hover:bg-stone-600 transition-colors font-medium"
+            className="px-3 py-1.5 text-xs bg-red-900 text-red-300 rounded-lg hover:bg-red-800 transition-colors font-medium"
           >
             Cancel
           </button>
@@ -86,8 +86,8 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
         <span
           className={`flex-1 text-sm transition-all cursor-pointer ${
             todo.completed
-              ? 'line-through text-stone-600'
-              : 'text-amber-200 hover:text-amber-100'
+              ? 'line-through text-red-700'
+              : 'text-red-100 hover:text-white'
           }`}
           onDoubleClick={() => {
             if (!todo.completed) {
@@ -109,7 +109,7 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
                 setEditValue(todo.text);
                 setIsEditing(true);
               }}
-              className="p-1.5 text-stone-500 hover:text-amber-300 rounded-lg hover:bg-stone-700 transition-all"
+              className="p-1.5 text-red-500 hover:text-red-200 rounded-lg hover:bg-red-800 transition-all"
               aria-label="Edit task"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -123,7 +123,7 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemP
           )}
           <button
             onClick={() => onDelete(todo.id)}
-            className="p-1.5 text-stone-500 hover:text-red-400 rounded-lg hover:bg-stone-700 transition-all"
+            className="p-1.5 text-red-500 hover:text-red-200 rounded-lg hover:bg-red-800 transition-all"
             aria-label="Delete task"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
