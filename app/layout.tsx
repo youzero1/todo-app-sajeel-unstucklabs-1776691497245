@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Todo App',
-  description: 'A beautiful todo application built with Next.js',
+  title: 'Portfolio',
+  description: 'My personal portfolio website',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-red-950 min-h-screen">
+      <body className="bg-gray-950 min-h-screen text-white">
         {children}
       </body>
     </html>
