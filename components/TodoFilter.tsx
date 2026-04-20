@@ -31,16 +31,16 @@ export default function TodoFilter({
           onClick={() => onFilterChange(f.value)}
           className={`flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-medium transition-all ${
             filter === f.value
-              ? 'bg-indigo-100 text-indigo-700'
-              : 'text-gray-400 hover:text-gray-600 hover:bg-gray-100'
+              ? 'bg-zinc-700 text-white'
+              : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800'
           }`}
         >
           {f.label}
           <span
             className={`text-xs rounded-full px-1.5 py-0.5 ${
               filter === f.value
-                ? 'bg-indigo-200 text-indigo-700'
-                : 'bg-gray-200 text-gray-500'
+                ? 'bg-zinc-500 text-white'
+                : 'bg-zinc-800 text-zinc-400'
             }`}
           >
             {f.count}

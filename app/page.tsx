@@ -62,23 +62,23 @@ export default function Home() {
       <div className="max-w-lg mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mb-2">
+          <h1 className="text-5xl font-extrabold text-white mb-2">
             My Tasks
           </h1>
-          <p className="text-gray-500 text-sm">
+          <p className="text-zinc-500 text-sm">
             {activeCount} task{activeCount !== 1 ? 's' : ''} remaining
           </p>
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="bg-zinc-900 rounded-3xl shadow-2xl shadow-black/60 overflow-hidden border border-zinc-800">
           {/* Input */}
-          <div className="p-6 border-b border-gray-100">
+          <div className="p-6 border-b border-zinc-800">
             <TodoInput onAdd={addTodo} />
           </div>
 
           {/* Filter */}
-          <div className="px-6 py-3 bg-gray-50 border-b border-gray-100">
+          <div className="px-6 py-3 bg-zinc-950 border-b border-zinc-800">
             <TodoFilter
               filter={filter}
               onFilterChange={setFilter}
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
 
           {/* List */}
-          <div className="divide-y divide-gray-50">
+          <div className="divide-y divide-zinc-800">
             <TodoList
               todos={filteredTodos}
               onToggle={toggleTodo}
@@ -100,13 +100,13 @@ export default function Home() {
 
           {/* Footer */}
           {completedCount > 0 && (
-            <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
-              <span className="text-sm text-gray-400">
+            <div className="px-6 py-4 bg-zinc-950 border-t border-zinc-800 flex justify-between items-center">
+              <span className="text-sm text-zinc-500">
                 {completedCount} completed
               </span>
               <button
                 onClick={clearCompleted}
-                className="text-sm text-red-400 hover:text-red-600 transition-colors font-medium"
+                className="text-sm text-red-500 hover:text-red-400 transition-colors font-medium"
               >
                 Clear completed
               </button>
@@ -117,7 +117,7 @@ export default function Home() {
           {filteredTodos.length === 0 && (
             <div className="py-16 text-center">
               <div className="text-6xl mb-4">🎉</div>
-              <p className="text-gray-400 font-medium">
+              <p className="text-zinc-500 font-medium">
                 {filter === 'completed'
                   ? 'No completed tasks yet'
                   : filter === 'active'
@@ -128,7 +128,7 @@ export default function Home() {
           )}
         </div>
 
-        <p className="text-center text-gray-400 text-xs mt-6">
+        <p className="text-center text-zinc-600 text-xs mt-6">
           Click on a task to mark it complete
         </p>
       </div>
